@@ -1,0 +1,20 @@
+<template>
+    <template if:true={isLoading}>
+        <lightning-spinner
+            alternative-text="Loading"
+            size="Medium"
+        ></lightning-spinner>
+    </template>
+
+    <template if:false={isLoading}>
+        <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={COLUMNS}>
+        </lightning-datatable>
+    </template>
+
+    <tempalte lwc:if={error}>
+        {error}
+    </tempalte>
+</template>
